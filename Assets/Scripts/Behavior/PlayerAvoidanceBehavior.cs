@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class PlayerAvoidanceBehavior : FilteredFlockBehavior
 {
-    public Transform player;
+    public Player player;
 
     public override Vector2 CalculateMove(FlockAgent agent, List<Transform> context, Flock flock)
     {
@@ -17,20 +17,10 @@ public class PlayerAvoidanceBehavior : FilteredFlockBehavior
         Vector2 avoidanceMove = Vector2.zero;
         List<Transform> filteredContext = filter == null ? context : filter.Filter(agent, context);
 
-        int count = 0;
 
-        foreach (Transform item in filteredContext)
+        if (Vector2.SqrMagnitude(player.transform.position - agent.transform.position) < flock.SquareAvoidanceRadius)
         {
-            if (Vector2.SqrMagnitude(item.position - player.position) < flock.SquareAvoidanceRadius)
-            {
-                avoidanceMove += (Vector2)(player.position - item.position);
-                count++;
-            }
-
-        }
-        if (count != 0)
-        {
-            avoidanceMove /= count;
+            avoidanceMove += (Vector2)(agent.transform.position - player.transform.position);
         }
 
         return avoidanceMove;
