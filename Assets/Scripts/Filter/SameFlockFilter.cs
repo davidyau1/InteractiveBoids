@@ -4,7 +4,12 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Flock/Filter/Same Flock")]
 
 public class SameFlockFilter : ContextFilter
-{
+{/// <summary>
+/// Checks if the agent is in the same flock
+/// </summary>
+/// <param name="agent"> individal </param>
+/// <param name="original">original list</param>
+/// <returns> filtered list</returns>
     public override List<Transform> Filter(FlockAgent agent, List<Transform> original)
     {
 

@@ -35,6 +35,7 @@ public class Flock : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //Create the agents
         _squareMaxSpeed = maxSpeed * maxSpeed;
         _squareNeighborRadius = neighborRadius * neighborRadius;
         _squareAvoidanceRadius= _squareNeighborRadius*avoidanceRadiusMultiplier * avoidanceRadiusMultiplier;
@@ -56,6 +57,7 @@ public class Flock : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //for each agent look in radius and choose movement
         foreach (FlockAgent agent in agents)
         {
         
@@ -72,6 +74,7 @@ public class Flock : MonoBehaviour
         }
 
     }
+    //locate nearby objects
     private List<Transform> GetNearbyObjects(FlockAgent agent)
     {
         List<Transform> context = new List<Transform>();

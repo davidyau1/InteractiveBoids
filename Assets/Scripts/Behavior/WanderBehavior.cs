@@ -7,7 +7,7 @@ public class WanderBehavior : FilteredFlockBehavior
 {
     private Path _path;
     private int _currentWaypoint = 0;
-
+    //calculate movement to wonder to waypoints
     public override Vector2 CalculateMove(FlockAgent agent, List<Transform> context, Flock flock)
     {
         if (_path == null)
@@ -18,6 +18,8 @@ public class WanderBehavior : FilteredFlockBehavior
 
 
     }
+
+    //follow path to waypoints
     private Vector2 FollowPath(FlockAgent agent)
     {
         if (_path == null) return Vector2.zero;
@@ -36,6 +38,7 @@ public class WanderBehavior : FilteredFlockBehavior
         return waypointDirection.normalized;
     }
 
+    //Find the way point when in radius
     public bool WaypointInRadius(FlockAgent agent, int currentWaypoint, out Vector2 waypointDirection)
     {
         waypointDirection = (Vector2)(_path.waypoints[currentWaypoint].position - agent.transform.position);
@@ -49,6 +52,7 @@ public class WanderBehavior : FilteredFlockBehavior
         }
     }
 
+    //Find path
     private void FindPath(FlockAgent agent, List<Transform> context)
     {
         List<Transform> filteredContext = (filter == null) ? context : filter.Filter(agent, context);

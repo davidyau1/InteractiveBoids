@@ -4,5 +4,6 @@ using UnityEngine;
 
 public abstract class ContextFilter : ScriptableObject
 {
+    //abstract class for filter
     public abstract List<Transform> Filter(FlockAgent agent, List<Transform>original);
 }

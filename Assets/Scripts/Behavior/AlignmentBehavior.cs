@@ -4,7 +4,13 @@ using UnityEngine;
 
 [CreateAssetMenu(menuName = "Flock/Behaviour/Alignment")]
 public class AlignmentBehavior : FilteredFlockBehavior
-{
+{    /// <summary>
+     /// Calculate move
+     /// </summary>
+     /// <param name="agent">agent</param>
+     /// <param name="context">context</param>
+     /// <param name="flock">flock</param>
+     /// <returns>Movement to align agents</returns>
     public override Vector2 CalculateMove(FlockAgent agent, List<Transform> context, Flock flock)
     {
         if (context.Count==0)

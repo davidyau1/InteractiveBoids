@@ -9,12 +9,18 @@ public class PlayerAvoidanceBehavior : FilteredFlockBehavior
 
     public int squareAvoidanceRadius;
 
-
+    //get player
     void FindPlayer()
     {
         _player = FindObjectOfType<PlayerMovement>();
     }
-
+    /// <summary>
+    /// Work out movement to void player
+    /// </summary>
+    /// <param name="agent"></param>
+    /// <param name="context"></param>
+    /// <param name="flock"></param>
+    /// <returns>Movement to avoid movement</returns>
     public override Vector2 CalculateMove(FlockAgent agent, List<Transform> context, Flock flock)
     {
         FindPlayer();

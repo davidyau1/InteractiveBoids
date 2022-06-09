@@ -5,10 +5,13 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     #region variables
+    //player speed
     public float speed = 3f;
 
     #endregion
-
+    /// <summary>
+    /// Player movement
+    /// </summary>
     #region methods
     void Movement()
     {
@@ -39,6 +42,7 @@ public class PlayerMovement : MonoBehaviour
 
 
     }
+    //Quit key
     void Quit()
     {
         if (Input.GetKey("escape"))

@@ -16,15 +16,24 @@ public class CompositeBehavior : FlockBehavior
     }
     public BehaviourGroup[] behaviours;
 
+    /// <summary>
+    /// Calculate move
+    /// </summary>
+    /// <param name="agent">agent</param>
+    /// <param name="context">context</param>
+    /// <param name="flock">flock</param>
+    /// <returns>Composite Movement</returns>
     public override Vector2 CalculateMove(FlockAgent agent, List<Transform> context, Flock flock)
     {
         Vector2 move = Vector2.zero;
 
         foreach (BehaviourGroup behave in behaviours)
         {
+
             Vector2 partialMove=behave.behavior.CalculateMove(agent,context, flock)*behave.weights;
             if (partialMove!=Vector2.zero)
             {
+                //calulate total move by individual behaviours and weight
                 if (partialMove.sqrMagnitude>behave.weights*behave.weights)
                 {
                     partialMove.Normalize();
