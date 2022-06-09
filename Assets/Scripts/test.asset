@@ -10,18 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5a6f4c4e58eab074f9851ad947e121b5, type: 3}
-  m_Name: Red Composite Behavior
+  m_Name: test
   m_EditorClassIdentifier: 
   behaviours:
-  - behavior: {fileID: 11400000, guid: 8bb137175ae4cf441812f86b4630bb27, type: 2}
-    weights: 1
   - behavior: {fileID: 11400000, guid: 94d8cb216f9608542938941e1ccdd1d1, type: 2}
+    weights: 1
+  - behavior: {fileID: 11400000, guid: 8bb137175ae4cf441812f86b4630bb27, type: 2}
     weights: 1
   - behavior: {fileID: 11400000, guid: 2386f44ad3041e44c945db868a21fc47, type: 2}
     weights: 1
   - behavior: {fileID: 11400000, guid: 4fb59c4629f5f3348b2786879869fc80, type: 2}
     weights: 0.1
-  - behavior: {fileID: 11400000, guid: 40ecdd2c062d75547b1d4b23da838de6, type: 2}
-    weights: 1
-  - behavior: {fileID: 11400000, guid: a17a6715c6419334298b4d11e4117e5d, type: 2}
-    weights: 2

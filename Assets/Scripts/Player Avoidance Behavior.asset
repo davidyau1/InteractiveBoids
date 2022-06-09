@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Player Avoidance Behavior
   m_EditorClassIdentifier: 
   filter: {fileID: 11400000, guid: ba93bc747baddf546bd62771af253c6d, type: 2}
-  player: {fileID: 0}
+  squareAvoidanceRadius: 100

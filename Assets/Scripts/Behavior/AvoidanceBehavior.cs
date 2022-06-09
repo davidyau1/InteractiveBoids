@@ -19,7 +19,7 @@ public class AvoidanceBehavior : FilteredFlockBehavior
 
         foreach (Transform item in filteredContext)
         {
-            if (Vector2.SqrMagnitude(item.position-agent.transform.position)<flock.SquareAvoidanceRadius)
+            if (Vector2.SqrMagnitude(item.position-agent.transform.position)<=flock.SquareAvoidanceRadius)
             {
                 avoidanceMove += (Vector2)(agent.transform.position - item.position);
                 count++;
